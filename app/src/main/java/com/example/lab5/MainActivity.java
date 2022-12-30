@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button btn = findViewById(R.id.button);
        ProgressBar bar=findViewById(R.id.progressBar);
-        AlertDialog.Builder builder=new AlertDialog.Builder(getApplicationContext());
+        AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
         bar.setVisibility(View.GONE);
 
         btn.setOnClickListener(new View.OnClickListener() {
@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
             builder.setMessage("Do you want to run a progress bar ?");
+            builder.setCancelable(false);
             builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
                 AlertDialog alert= builder.create();
                 alert.setTitle("HEllo");
-
+                alert.show();
 
 
 
